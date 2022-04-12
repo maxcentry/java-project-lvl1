@@ -9,14 +9,14 @@ public class Even {
     public static final int MAX_RAND = 100;
     public static final int MIN_RAND = 1;
 
-    public static final Random random = new Random();
+    public static final Random RANDOM = new Random();
 
     public static void play() {
         String username = Cli.greetingUser();
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         int successAttempt = 0;
         while (successAttempt < EXPECTED_SUCCESS_ATTEMPT) {
-            int magicNumber = random.nextInt(MIN_RAND, MAX_RAND);
+            int magicNumber = RANDOM.nextInt(MIN_RAND, MAX_RAND);
             System.out.println("Question: " + magicNumber);
             System.out.print("Answer: ");
             Scanner sc = new Scanner(System.in);
