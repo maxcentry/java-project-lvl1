@@ -4,3 +4,7 @@
 [![Actions Status](https://github.com/maxcentry/java-project-lvl1/actions/workflows/gradle.yml/badge.svg)](https://github.com/maxcentry/java-project-lvl1/actions/workflows/gradle.yml)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+### Demo
+
+[![asciicast](https://asciinema.org/a/CjRa23V34mt4cKsi9SfjlcO5j.svg)](https://asciinema.org/a/CjRa23V34mt4cKsi9SfjlcO5j)
