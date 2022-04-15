@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.Objects;
 import java.util.Random;
 
 public abstract class Engine {
@@ -10,6 +11,8 @@ public abstract class Engine {
 
     private String gameDescription;
     private String username;
+    private String answer;
+    private String rightAnswer;
 
     private String getGameDescription() {
         return gameDescription;
@@ -25,6 +28,22 @@ public abstract class Engine {
 
     protected final void setUsername(String val) {
         username = val;
+    }
+
+    private String getAnswer() {
+        return answer;
+    }
+
+    protected final void setAnswer(String val) {
+        answer = val;
+    }
+
+    private String getRightAnswer() {
+        return rightAnswer;
+    }
+
+    protected final void setRightAnswer(String val) {
+        rightAnswer = val;
     }
 
     public final void play() {
@@ -55,8 +74,8 @@ public abstract class Engine {
     }
 
     private void requestAnswer() {
-        System.out.print("Answer: ");
-        getAnswer();
+        System.out.print("Your answer: ");
+        getAnswerFromUser();
     }
 
     private void successAttempt() {
@@ -64,6 +83,7 @@ public abstract class Engine {
     }
 
     private void wrongAttempt() {
+        System.out.println("'" + getAnswer() + "' is wrong answer ;(. Correct answer was '" + getRightAnswer() + "'.");
         System.out.println("Let's try again, " + getUsername() + "!");
         System.exit(0);
     }
@@ -72,9 +92,11 @@ public abstract class Engine {
         System.out.println("Congratulations, " + getUsername() + "!");
     }
 
+    protected final boolean isRightAnswer() {
+        return Objects.equals(getRightAnswer(), getAnswer());
+    }
+
     protected abstract String getQuestion();
 
-    protected abstract void getAnswer();
-
-    protected abstract boolean isRightAnswer();
+    protected abstract void getAnswerFromUser();
 }

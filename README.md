@@ -7,4 +7,8 @@
 
 ### Demo
 
-[![asciicast](https://asciinema.org/a/CjRa23V34mt4cKsi9SfjlcO5j.svg)](https://asciinema.org/a/CjRa23V34mt4cKsi9SfjlcO5j)
+#### Calc
+[![asciicast](https://asciinema.org/a/xVdgkEeaMHPMuNdNtj6MmNEXQ.svg)](https://asciinema.org/a/xVdgkEeaMHPMuNdNtj6MmNEXQ)
+
+#### GCD
+[![asciicast](https://asciinema.org/a/wNMRBmlwaVxltdylgA59Ssgbz.svg)](https://asciinema.org/a/wNMRBmlwaVxltdylgA59Ssgbz)

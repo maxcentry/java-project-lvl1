@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Calc extends Engine {
-    private int answer = 0;
-    private int rightAnswer = 0;
 
     public Calc() {
         setGameDescription("What is the result of the expression?");
@@ -16,37 +14,32 @@ public class Calc extends Engine {
 
     @Override
     protected final String getQuestion() {
-        int op1 = RANDOM.nextInt(MAXIMUM);
-        int op2 = RANDOM.nextInt(MAXIMUM);
+        int operand1 = RANDOM.nextInt(MAXIMUM);
+        int operand2 = RANDOM.nextInt(MAXIMUM);
 
-        List<String> operations = Arrays.asList("+", "-", "*");
-        String randomOperation = operations.get(RANDOM.nextInt(operations.size()));
+        List<String> availableOperations = Arrays.asList("+", "-", "*");
+        String randomOperation = availableOperations.get(RANDOM.nextInt(availableOperations.size()));
 
         switch (randomOperation) {
             case "+":
-                rightAnswer = op1 + op2;
+                setRightAnswer(String.valueOf(operand1 + operand2));
                 break;
             case "-":
-                rightAnswer = op1 - op2;
+                setRightAnswer(String.valueOf(operand1 - operand2));
                 break;
             case "*":
-                rightAnswer = op1 * op2;
+                setRightAnswer(String.valueOf(operand1 * operand2));
                 break;
             default:
                 break;
         }
 
-        return op1 + randomOperation + op2;
+        return operand1 + randomOperation + operand2;
     }
 
     @Override
-    protected final void getAnswer() {
+    protected final void getAnswerFromUser() {
         Scanner sc = new Scanner(System.in);
-        answer = sc.nextInt();
-    }
-
-    @Override
-    protected final boolean isRightAnswer() {
-        return answer == rightAnswer;
+        setAnswer(String.valueOf(sc.nextInt()));
     }
 }
